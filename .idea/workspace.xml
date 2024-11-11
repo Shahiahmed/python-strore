@@ -5,33 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d16bb239-d85f-4477-9274-5e16770cda30" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/my_store/assets/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_store/cart/cart.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_store/cart/templates/cart/cart_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_store/cart/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_store/orders/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_store/orders/templates/orders/order_create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_store/orders/templates/orders/order_created.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_store/orders/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_store/postcss.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_store/static/src/input.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_store/store/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_store/store/templates/store/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_store/store/templates/store/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_store/store/templates/store/product_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_store/store/templates/store/product_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_store/store/templates/store/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_store/store/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_store/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_store/templates/layouts/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_store/templates/layouts/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_store/templates/layouts/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_store/templates/product_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_store/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_store/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_store/my_store/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_store/my_store/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_store/my_store/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_store/my_store/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_store/orders/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_store/orders/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_store/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_store/orders/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

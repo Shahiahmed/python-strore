@@ -1,7 +1,6 @@
 from django.db import models
 from store.models import Product
 
-
 class Order(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
@@ -20,6 +19,10 @@ class Order(models.Model):
     def __str__(self):
         return f'Order {self.id}'
 
+    def get_items(self):
+        return ', '.join([str(item) for item in self.items.all()])
+
+    get_items.short_description = 'Ordered Items'
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, related_name='items', on_delete=models.CASCADE)
@@ -28,4 +31,4 @@ class OrderItem(models.Model):
     quantity = models.PositiveIntegerField(default=1)
 
     def __str__(self):
-        return f'{self.quantity} x {self.product.name}'
+        return f'{self.product.name} - {self.quantity} pcs.'
