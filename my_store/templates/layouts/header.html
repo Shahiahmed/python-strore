@@ -1,0 +1,40 @@
+<header>
+    <nav class="bg-white border-gray-200 px-4 py-2.5">
+        <div class="container flex flex-wrap items-center justify-between mx-auto">
+            <a href="{% url 'store:index' %}" class="flex items-center">
+                <span class="self-center text-xl font-semibold">My Store</span>
+            </a>
+            <div class="flex md:order-2">
+                <!-- Ссылка на корзину -->
+                <a href="{% url 'cart:cart_detail' %}" class="relative text-gray-700 hover:text-gray-900 mx-4">
+                    <!-- Иконка корзины -->
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4"></path>
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                    </svg>
+                    <!-- Количество товаров в корзине -->
+                    {% if cart %}
+                        <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-red-600 rounded-full">
+                            {{ cart|length }}
+                        </span>
+                    {% endif %}
+                </a>
+                <button data-collapse-toggle="mobile-menu" type="button" class="md:hidden text-gray-500">
+                    <!-- Иконка меню -->
+                </button>
+            </div>
+            <div class="hidden md:flex md:order-1" id="mobile-menu">
+                <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0">
+                    <li>
+                        <a href="{% url 'store:index' %}" class="block py-2">Главная</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'store:product_list' %}" class="block py-2">Товары</a>
+                    </li>
+                    <!-- Добавьте другие ссылки -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

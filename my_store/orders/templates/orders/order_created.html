@@ -1,0 +1,30 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Заказ оформлен - My Store{% endblock %}
+
+{% block content %}
+<!-- Модальное окно -->
+<div id="successModal" tabindex="-1" aria-hidden="true" class="fixed inset-0 flex items-center justify-center z-50">
+    <div class="relative w-full max-w-md h-full md:h-auto">
+        <div class="bg-white rounded-lg shadow">
+            <div class="p-6 text-center">
+                <h3 class="mb-5 text-lg font-normal text-gray-500">Спасибо за ваш заказ!</h3>
+                <p class="mb-5">Ваш заказ был успешно оформлен. Номер заказа: {{ order.id }}.</p>
+                <button onclick="closeModal()" class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Затемнение фона -->
+<div id="modalBackdrop" class="fixed inset-0 bg-gray-900 bg-opacity-50 z-40"></div>
+
+<!-- Скрипт для управления модальным окном -->
+<script>
+    function closeModal() {
+        document.getElementById('successModal').style.display = 'none';
+        document.getElementById('modalBackdrop').style.display = 'none';
+        window.location.href = '/'; // Перенаправление на главную страницу
+    }
+</script>
+{% endblock %}

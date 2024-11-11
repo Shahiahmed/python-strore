@@ -1,0 +1,53 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Главная - My Store{% endblock %}
+
+{% block content %}
+<div class="container mx-auto py-8">
+    <h1 class="text-3xl font-bold mb-6">Добро пожаловать в My Store</h1>
+
+    <!-- Краткое описание магазина -->
+    <p class="mb-8">Ваш любимый интернет-магазин с огромным выбором товаров по привлекательным ценам.</p>
+
+    <!-- Новые товары -->
+    <h2 class="text-2xl font-semibold mb-4">Новые поступления</h2>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+        {% for product in new_products %}
+        <div class="border p-4">
+            <a href="{% url 'store:product_detail' product.slug %}">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-full h-48 object-cover">
+                <h3 class="text-lg font-bold mt-2">{{ product.name }}</h3>
+            </a>
+            <p class="text-gray-700">${{ product.price }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Популярные товары -->
+    <h2 class="text-2xl font-semibold mb-4">Популярные товары</h2>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        {% for product in popular_products %}
+        <div class="border p-4">
+            <a href="{% url 'store:product_detail' product.slug %}">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-full h-48 object-cover">
+                <h3 class="text-lg font-bold mt-2">{{ product.name }}</h3>
+            </a>
+            <p class="text-gray-700">${{ product.price }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Добавьте после секции популярных товаров -->
+<h2 class="text-2xl font-semibold mb-4">Категории</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+    {% for category in categories %}
+    <div class="border p-4">
+        <a href="{% url 'store:product_list_by_category' category.slug %}">
+            <h3 class="text-lg font-bold">{{ category.name }}</h3>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+</div>
+{% endblock %}

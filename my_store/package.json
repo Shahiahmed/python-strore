@@ -1,0 +1,20 @@
+{
+  "name": "my_store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+      "build:css": "tailwindcss -i ./static/css/styles.css -o ./static/css/tailwind.css --watch",
+      "watch": "npx tailwindcss -i ./assets/css/styles.css -o ./static/css/styles.css --watch"
+  },
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "flowbite": "^2.5.2",
+    "postcss": "^8.4.48",
+    "tailwindcss": "^3.4.14"
+  }
+}

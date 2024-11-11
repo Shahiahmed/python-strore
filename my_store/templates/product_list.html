@@ -1,0 +1,19 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Товары - My Store{% endblock %}
+
+{% block content %}
+<div class="container mx-auto py-8">
+    <h2 class="text-2xl font-semibold">Список товаров</h2>
+    <ul class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {% for product in products %}
+        <li class="border p-4">
+            <h3 class="text-xl font-bold">
+                <a href="{% url 'store:product_detail' product.slug %}">{{ product.name }}</a>
+            </h3>
+            <p>{{ product.price }}$</p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Корзина - My Store{% endblock %}
+
+{% block content %}
+<div class="container mx-auto py-8">
+    <h2 class="text-2xl font-semibold mb-4">Корзина</h2>
+    {% if cart %}
+        <table class="w-full border">
+            <thead>
+                <tr>
+                    <th class="px-4 py-2">Товар</th>
+                    <th class="px-4 py-2">Цена</th>
+                    <th class="px-4 py-2">Количество</th>
+                    <th class="px-4 py-2">Всего</th>
+                    <th class="px-4 py-2">Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart %}
+                <tr>
+                    <td class="border px-4 py-2">{{ item.product.name }}</td>
+                    <td class="border px-4 py-2">${{ item.price }}</td>
+                    <td class="border px-4 py-2">{{ item.quantity }}</td>
+                    <td class="border px-4 py-2">${{ item.total_price }}</td>
+                    <td class="border px-4 py-2">
+                        <a href="{% url 'cart:cart_remove' item.product.id %}" class="text-red-500">Удалить</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="mt-4">
+            <p class="text-lg font-bold">Общая стоимость: ${{ cart.get_total_price }}</p>
+        </div>
+        <div class="mt-4">
+           <a href="{% url 'orders:order_create' %}" class="bg-green-500 text-white px-4 py-2">Оформить заказ</a>
+
+        </div>
+    {% else %}
+        <p>Ваша корзина пуста.</p>
+    {% endif %}
+</div>
+{% endblock %}
